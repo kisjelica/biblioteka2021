@@ -4,16 +4,40 @@ public class Autor {
 
 	private String ime;
 	private String prezime;
+	
+	public Autor() {
+		super();
+	}
+
+	public Autor(String ime, String prezime) {
+		super();
+		setIme(ime);
+		setPrezime(prezime);
+	}
+
 	public String getIme() {
 		return ime;
 	}
 	public void setIme(String ime) {
+		if(ime == null) {
+			throw new NullPointerException("Ime ne smije biti null.");
+		}
+		if(ime.length() < 2) {
+			throw new RuntimeException("Ime mora imati vise od 2 znaka.");
+		}
+		
 		this.ime = ime;
 	}
 	public String getPrezime() {
 		return prezime;
 	}
 	public void setPrezime(String prezime) {
+		if(prezime == null) {
+			throw new NullPointerException("Prezime ne smije biti null.");
+		}
+		if(prezime.length() < 2) {
+			throw new RuntimeException("Prezime mora imati vise od 2 znaka.");
+		}
 		this.prezime = prezime;
 	}
 	@Override
