@@ -22,7 +22,9 @@ public class Biblioteka implements BibliotekaInterface {
 
 	@Override
 	public void obrisiKnjigu(Knjiga knjiga) {
-		if (knjiga == null || !knjige.contains(knjiga))
+		if (knjiga == null)
+			throw new NullPointerException("Knjiga ne smije biti null.");
+		if (!knjige.contains(knjiga))
 			throw new RuntimeException("Knjiga ne smije biti null i mora postojati u bibilioteci.");
 
 		knjige.remove(knjiga);
