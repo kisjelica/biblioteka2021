@@ -3,9 +3,15 @@ package biblioteka;
 import java.util.LinkedList;
 
 import biblioteka.interfejs.BibliotekaInterface;
-
+/**
+ * Ova klasa implementira interfejs BibliotekaInterfejs.
+ * @author rastko
+ *
+ */
 public class Biblioteka implements BibliotekaInterface {
-
+	/**
+	 * Lista sa svim knjigama u biblioteci.
+	 */
 	private LinkedList<Knjiga> knjige = new LinkedList<>();
 
 	@Override
